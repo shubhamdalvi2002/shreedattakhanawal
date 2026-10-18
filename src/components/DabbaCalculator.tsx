@@ -171,11 +171,11 @@ export const DabbaCalculator: React.FC<DabbaCalculatorProps> = ({ lang }) => {
                 <label className="text-xs font-bold text-neutral-700 uppercase tracking-wider">
                   १. {lang === 'mr' ? 'जेवणाची वेळ निवडा' : 'Meal Shift'}
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   {[
                     { id: 'lunch', labelMr: 'दुपारचा डबा', labelEn: 'Lunch Only' },
                     { id: 'dinner', labelMr: 'रात्रीचा डबा', labelEn: 'Dinner Only' },
-                    { id: 'both', labelMr: 'दोन्ही वेळ (दुपार+रात्र)', labelEn: 'Both Meals' },
+                    { id: 'both', labelMr: 'दोन्ही वेळ (दुपार + रात्र)', labelEn: 'Both Meals' },
                   ].map((s) => (
                     <button
                       key={s.id}
@@ -183,7 +183,7 @@ export const DabbaCalculator: React.FC<DabbaCalculatorProps> = ({ lang }) => {
                       onClick={() => setMealShift(s.id as any)}
                       className={`py-2.5 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         mealShift === s.id
-                          ? 'bg-[#5A1420] text-white border-[#5A1420]'
+                          ? 'bg-[#5A1420] text-white border-[#5A1420] shadow-sm'
                           : 'bg-[#FDFBF7] text-neutral-700 border-neutral-200 hover:border-[#C59B27]'
                       }`}
                     >

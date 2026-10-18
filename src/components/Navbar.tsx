@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onToggleLang }) => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-marathi text-xl sm:text-2xl font-bold tracking-normal text-[#E8D4A2] group-hover:text-[#F3E9D2] transition-colors whitespace-nowrap">
+              <span className="font-marathi text-lg sm:text-2xl font-bold tracking-normal text-[#E8D4A2] group-hover:text-[#F3E9D2] transition-colors whitespace-nowrap">
                 {lang === 'mr' ? 'श्री दत्त खानावळ' : 'Shree Datta Khanawal'}
               </span>
               <span className="text-[11px] text-[#C59B27] font-medium tracking-wider -mt-1 hidden sm:block">
@@ -61,11 +61,11 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onToggleLang }) => {
           </nav>
 
           {/* Zone 3: Language Switcher & Direct Call (No Book Dabba Button) */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Language Switcher */}
             <button
               onClick={onToggleLang}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full bg-white/10 hover:bg-white/20 text-[#E8D4A2] border border-[#C59B27]/40 transition-colors"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-full bg-white/10 hover:bg-white/20 text-[#E8D4A2] border border-[#C59B27]/40 transition-colors shrink-0"
               title={lang === 'mr' ? 'Switch to English' : 'मराठीत पहा'}
               aria-label="Toggle language"
             >
@@ -73,13 +73,15 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onToggleLang }) => {
               <span className="tabular-nums font-medium">{lang === 'mr' ? 'English' : 'मराठी'}</span>
             </button>
 
-            {/* Direct Call Button */}
+            {/* Direct Call Button (Responsive for all devices) */}
             <a
               href={`tel:+91${CONTACT_INFO.phone}`}
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-full bg-[#D4AF37] text-[#2B1608] hover:bg-[#E8D4A2] transition-colors shadow-sm"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 text-xs font-semibold rounded-full bg-[#D4AF37] text-[#2B1608] hover:bg-[#E8D4A2] transition-colors shadow-sm shrink-0"
+              title={lang === 'mr' ? 'थेट कॉल करा' : 'Call Directly'}
             >
-              <Phone className="w-3.5 h-3.5" />
-              <span className="font-mono font-bold">{CONTACT_INFO.phoneFormatted}</span>
+              <Phone className="w-3.5 h-3.5 shrink-0" />
+              <span className="font-mono font-bold hidden sm:inline">{CONTACT_INFO.phoneFormatted}</span>
+              <span className="font-bold inline sm:hidden">{lang === 'mr' ? 'कॉल' : 'Call'}</span>
             </a>
 
             {/* Mobile Hamburger */}

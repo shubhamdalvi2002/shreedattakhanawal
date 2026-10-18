@@ -212,19 +212,17 @@ export const TodaysSpecial: React.FC<TodaysSpecialProps> = ({ lang }) => {
             </div>
           )}
 
-          {/* Prompt Note */}
+          {/* Bottom Bar */}
           <div className="bg-[#FDFBF7] px-6 py-3 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-600">
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 font-medium text-[#5A1420]">
               <Utensils className="w-3.5 h-3.5 text-[#C59B27]" />
-              {lang === 'mr' 
-                ? 'हॉस्टेल विद्यार्थी व नोकरदारांसाठी वेळेवर डबा घरपोच पोहचवला जातो.' 
-                : 'Punctual home and office tiffin delivery available for students and professionals.'}
+              {lang === 'mr' ? '॥ श्री दत्त खानावळ - घरगुती जेवण व डबा सेवा ॥' : 'Shree Datta Khanawal - Authentic Homestyle Dining'}
             </span>
             <a
               href={`tel:+91${CONTACT_INFO.phone}`}
               className="text-[#7A1526] font-bold hover:underline font-mono"
             >
-              📞 {CONTACT_INFO.phone}
+              📞 {CONTACT_INFO.phoneFormatted}
             </a>
           </div>
 

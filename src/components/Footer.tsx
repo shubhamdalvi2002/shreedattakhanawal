@@ -86,6 +86,20 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   {CONTACT_INFO.phoneFormatted}
                 </a>
               </div>
+              <div className="pt-1">
+                <span className="text-[#C59B27] block text-[11px] font-semibold">{lang === 'mr' ? 'पत्ता: ' : 'Address: '}</span>
+                <span className="text-[11px] text-white/90 leading-tight block">
+                  {lang === 'mr' ? CONTACT_INFO.addressMr : CONTACT_INFO.addressEn}
+                </span>
+                <a 
+                  href={CONTACT_INFO.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline text-[11px] font-semibold inline-block mt-0.5"
+                >
+                  📍 {lang === 'mr' ? 'गुगल मॅप्सवर ठिकाण पहा' : 'View on Google Maps'}
+                </a>
+              </div>
               <div className="pt-2 text-[11px] text-[#E8D4A2]/80">
                 {lang === 'mr' ? 'सकाळी ०९:०० ते दुपारी ०१:०० | संध्याकाळी ०८:०० ते रात्री १०:००' : 'Morning 09:00 AM – 01:00 PM | Evening 08:00 PM – 10:00 PM'}
               </div>

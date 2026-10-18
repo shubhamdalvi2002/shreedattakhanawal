@@ -126,28 +126,21 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 <img
                   src={IMAGES.heroThali}
                   alt={lang === 'mr' ? 'श्री दत्त खानावळ अस्सल महाराष्ट्रीयन ताट' : 'Shree Datta Khanawal Maharashtrian Brass Thali'}
-                  className="w-full h-[360px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[380px] sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
-              </div>
-            </div>
 
-            {/* Adjusted Quote Tag: Positioned neatly below the image so it never blocks or disturbs the photo */}
-            <div className="mt-4 bg-[#FDFBF7] text-[#221618] rounded-2xl p-4 shadow-lg border border-[#C59B27]/40">
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#7A1526] to-[#5A1420] text-[#E8D4A2] font-bold text-sm flex items-center justify-center shrink-0 border border-[#D4AF37]/40 shadow-xs">
-                  पु
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between gap-2 mb-1">
-                    <span className="text-xs font-bold text-[#5A1420]">
+                {/* Tag on the 1st image without 'पु' logo */}
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent p-4 sm:p-5 text-white">
+                  <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
+                    <span className="font-marathi font-bold text-base sm:text-lg text-[#E8D4A2]">
                       {lang === 'mr' ? 'पुष्पा विलास दळवी' : 'Pushpa Vilas Dalvi'}
                     </span>
-                    <span className="text-[10px] font-medium text-[#997404] bg-[#F8F4EB] px-2 py-0.5 rounded-full border border-[#C59B27]/20">
+                    <span className="text-[11px] font-semibold text-[#D4AF37] bg-white/10 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-[#D4AF37]/40">
                       {lang === 'mr' ? 'संचालिका व मुख्य अन्नपूर्णा' : 'Founder & Head Chef'}
                     </span>
                   </div>
-                  <p className="text-xs text-neutral-700 italic leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#FDFBF7] italic leading-relaxed">
                     {lang === 'mr' 
                       ? '“माझ्या घरी आलेल्या प्रत्येकाला तृप्त जेवण वाढणे हाच आमचा धर्म आहे.”' 
                       : '“Serving every guest with pure maternal love and contentment is our dharma.”'}
